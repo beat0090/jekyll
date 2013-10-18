@@ -1,23 +1,24 @@
 ---
 layout: default
-title: Home
 ---
-<h1>Home</h1>
-<p>This is a paragraph</p>
 
+<h1>Dinosaurs!</h1>
+<p>Dinosaurs are super rockin’!</p>
 
+<h2>Carnivores</h2>
 <ul>
-	{% for page in site.pages %}
-		{% if page.Category == "Dino" %}
-			<li>
-				<strong>{{page.name}}</strong>
-				{{page.content}}
-				<dl>
-					<dt>Size</dt> <dd>{{page.size}}</dd>
-					<dt>Colour</dt> <dd>{{page.colour}}</dd>
-					<dt>Food</dt> <dd>{{page.food}}</dd>
-				</dl>
-			</li>
-		{% endif %}
-	{% endfor %}
+  {% for dino in site.pages %}
+    {% if dino.category == "carnivore" %}
+      <li>{{dino.name}}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<h2>Herbivores</h2>
+<ul>
+  {% for dino in site.pages %}
+    {% if dino.category == "herbivore" %}
+      <li>{{dino.name}}</li>
+    {% endif %}
+  {% endfor %}
 </ul>
